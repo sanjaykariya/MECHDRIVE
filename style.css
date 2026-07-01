@@ -7,7 +7,7 @@
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
+    min-height:calc(100vh - 70px);
     padding-top:40px;
 }
 
@@ -160,7 +160,7 @@ transform:translateY(10px);
 }
 
 .projects{
-    min-height:100vh;
+    min-height:auto;
     background:#050505;
     padding:100px 8%;
 }
@@ -451,7 +451,7 @@ nav a.active{
 
 .about{
 
-    min-height:100vh;
+    min-height:auto;
     background:#050505;
     padding:100px 8%;
 
@@ -464,7 +464,7 @@ section{
 .about,
 .skills,
 .projects,
-.certificates,
+.certifications,
 .contact{
     padding-top:120px;
 }
@@ -554,7 +554,7 @@ section{
 
 .skills{
 
-    min-height:100vh;
+    min-height:auto;
     background:#080808;
     padding:100px 8%;
 
@@ -616,7 +616,7 @@ section{
 
 .certifications{
 
-    min-height:100vh;
+    min-height:auto;
     background:#050505;
     padding:100px 8%;
 
@@ -690,7 +690,7 @@ section{
 
 .contact{
 
-    min-height:100vh;
+    min-height:auto;
     background:#080808;
 
     display:flex;
@@ -964,7 +964,7 @@ section{
 
     }
 
-    /* Certificates */
+    /* Certifications */
 
     .certificate-grid{
 
@@ -1012,6 +1012,16 @@ section{
 
     .gear-btn{
         display:block;
+    }
+
+    .about,
+    .skills,
+    .projects,
+    .certifications,
+    .contact{
+        padding-top: 90px 8% 60px;
+        padding-bottom: 50px;
+        padding: 80px 20px 50px;
     }
 
 }
