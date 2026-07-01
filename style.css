@@ -426,7 +426,7 @@ nav a.active{
 
     min-height:100vh;
     background:#050505;
-    padding: 80px;;
+    padding: 80px 8%;
 
 }
 
@@ -809,20 +809,25 @@ section{
 
 /* ===========================
    RESPONSIVE DESIGN
-=========================== */
 @media (max-width:768px){
 
+    /* Navbar */
     .navbar{
-        padding:15px 20px;
+        flex-direction:column;
         height:auto;
+        padding:15px;
     }
 
     nav{
-        display:none;
+        margin-top:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
     }
 
-    .gear-btn{
-        display:block;
+    /* Hero */
+    .hero{
+        min-height:100vh;
     }
 
     .title{
@@ -837,35 +842,63 @@ section{
     }
 
     .tagline{
+        font-size:16px;
+        text-align:center;
         width:90%;
+    }
+
+    /* Sections */
+    .about,
+    .skills,
+    .projects,
+    .certifications,
+    .contact{
+        min-height:100vh;
+        padding:100px 20px;
+    }
+
+    /* Blueprint */
+    .blueprint{
+        flex-direction:column;
         text-align:center;
     }
 
-    .blueprint{
-        flex-direction:column;
-        gap:35px;
-    }
-
     .profile-box img{
-        width:240px;
+        width:220px;
     }
 
+    .spec{
+        border-left:none;
+        border-top:2px solid #00bfff;
+        padding-top:15px;
+        padding-left:0;
+    }
+
+    /* Grids */
     .skills-grid,
     .project-grid,
     .certificate-grid{
         grid-template-columns:1fr;
     }
 
+    /* Contact */
     .contact-links{
         flex-direction:column;
+        width:100%;
     }
 
     .contact-links a{
-        width:100%;
         text-align:center;
     }
 
-}
+    /* Mobile menu */
+    nav{
+        display:none;
+    }
+
+    .gear-btn{
+        display:block;
+    }
 
 /* Desktop */
 @media (min-width:769px){
