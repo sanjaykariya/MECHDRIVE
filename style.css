@@ -998,3 +998,42 @@ section{
         display:none;
     }
 }
+
+/* ==========================
+   Intro Mobile Responsive
+========================== */
+
+@media (max-width: 768px) {
+
+    #introLogo{
+        font-size: 38px;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+
+    #introCar{
+        width: 260px;
+    }
+
+    #carGroup{
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    #startBtn{
+        width: 220px;
+        font-size: 15px;
+        padding: 14px 20px;
+    }
+
+    #loadingBox{
+        width: 220px;
+    }
+
+    #initialising{
+        font-size: 14px;
+    }
+
+}

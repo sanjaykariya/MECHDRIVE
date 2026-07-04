@@ -213,7 +213,7 @@ startBtn.addEventListener("click", () => {
         setTimeout(() => {
 
             // Move ONLY the car forward
-            introCar.style.transform = "translateX(900px)";
+            introCar.style.transform = "translateX(120vw)";
 
             introLogo.classList.add("logo-glow");
 
