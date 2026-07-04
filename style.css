@@ -1014,6 +1014,8 @@ section{
 
     #introCar{
         width:170px;
+        margin-left: -120px;
+        transform: translateX(-150px);
     }
 
     #startBtn{
