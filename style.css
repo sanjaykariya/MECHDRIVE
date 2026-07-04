@@ -1003,7 +1003,7 @@ section{
 @media (max-width:768px){
 
     #carGroup{
-        left:-100vw;
+        left:-110vw;
         gap:10px;
     }
 
@@ -1024,8 +1024,8 @@ section{
     }
 
     #initialising{
-        top:67%;
-        left:50%;
+        top:57%;
+        left:52%;
         transform:translateX(-50%);
         width:100%;
         text-align:center;
@@ -1035,8 +1035,8 @@ section{
 
     #loadingBox{
         width:220px;
-        left:50%;
-        top:75%;
+        left:52%;
+        top:65%;
         transform:translateX(-50%);
     }
 }
