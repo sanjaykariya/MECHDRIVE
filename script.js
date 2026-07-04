@@ -207,7 +207,11 @@ startBtn.addEventListener("click", () => {
 
         // Move logo + car together
         carGroup.style.transition = "left 3.5s cubic-bezier(.22,1,.36,1)";
-        carGroup.style.left = "30%";
+        if (window.innerWidth <= 768) {
+            carGroup.style.left = "12%";
+            } else {
+                 carGroup.style.left = "30%";
+            }
 
         // When they reach the center...
         setTimeout(() => {

@@ -897,6 +897,7 @@ section{
 
 @media (max-width:768px){
 
+
     /* Navbar */
     .navbar{
         flex-direction:column;
@@ -999,41 +1000,41 @@ section{
     }
 }
 
-/* ==========================
-   Intro Mobile Responsive
-========================== */
+@media (max-width:768px){
 
-@media (max-width: 768px) {
+    #carGroup{
+        left:-320px;
+        gap:10px;
+    }
 
     #introLogo{
-        font-size: 38px;
-        letter-spacing: 3px;
-        text-align: center;
+        font-size:38px;
+        letter-spacing:3px;
     }
 
     #introCar{
-        width: 260px;
-    }
-
-    #carGroup{
-        width: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
+        width:170px;
     }
 
     #startBtn{
-        width: 220px;
-        font-size: 15px;
-        padding: 14px 20px;
-    }
-
-    #loadingBox{
-        width: 220px;
+        padding:14px 35px;
+        font-size:16px;
     }
 
     #initialising{
-        font-size: 14px;
+        top:67%;
+        left:50%;
+        transform:translateX(-50%);
+        width:100%;
+        text-align:center;
+        font-size:16px;
+        letter-spacing:3px;
     }
 
+    #loadingBox{
+        width:220px;
+        left:50%;
+        top:75%;
+        transform:translateX(-50%);
+    }
 }
