@@ -1,3 +1,13 @@
+const loadingBox = document.getElementById("loadingBox");
+const loadingBar = document.getElementById("loadingBar");
+const intro = document.getElementById("intro");
+const introLogo = document.getElementById("introLogo");
+const mainContent = document.getElementById("mainContent");
+const startBtn = document.getElementById("startBtn");
+const carGroup = document.getElementById("carGroup");
+const introCar = document.getElementById("introCar");
+const hero = document.querySelector(".hero");
+const initialising = document.getElementById("initialising");
 document.addEventListener("DOMContentLoaded", () => {
 
     // Explore Button
@@ -16,14 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         entries.forEach(entry => {
 
-            if(entry.isIntersecting){
+            if (entry.isIntersecting) {
                 entry.target.classList.add("show");
             }
 
         });
 
-    },{
-        threshold:0.2
+    }, {
+        threshold: 0.2
     });
 
     hiddenElements.forEach(el => observer.observe(el));
@@ -54,7 +64,7 @@ topBtn.addEventListener("click", () => {
 
     document.getElementById("hero").scrollIntoView({
 
-        behavior:"smooth"
+        behavior: "smooth"
 
     });
 
@@ -83,7 +93,7 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if(link.getAttribute("href") === "#" + current){
+        if (link.getAttribute("href") === "#" + current) {
 
             link.classList.add("active");
 
@@ -108,7 +118,7 @@ cards.forEach(card => {
         const rotateX = (0.5 - y / rect.height) * 18;
 
         card.style.transform =
-        `perspective(1000px)
+            `perspective(1000px)
         rotateX(${rotateX}deg)
         rotateY(${rotateY}deg)
         translateY(-8px)`;
@@ -118,7 +128,7 @@ cards.forEach(card => {
     card.addEventListener("mouseleave", () => {
 
         card.style.transform =
-        "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+            "perspective(1000px) rotateX(0deg) rotateY(0deg)";
 
     });
 
@@ -129,9 +139,9 @@ const fills = document.querySelectorAll(".fill");
 
 const skillObserver = new IntersectionObserver((entries) => {
 
-    if(entries[0].isIntersecting){
+    if (entries[0].isIntersecting) {
 
-        fills.forEach(fill=>{
+        fills.forEach(fill => {
 
             fill.style.width = fill.dataset.width;
 
@@ -139,19 +149,19 @@ const skillObserver = new IntersectionObserver((entries) => {
 
     }
 
-},{
-    threshold:0.4
+}, {
+    threshold: 0.4
 });
 
 skillObserver.observe(skillSection);
 
 const projectCards = document.querySelectorAll(".project-card");
 
-const projectObserver = new IntersectionObserver((entries)=>{
+const projectObserver = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
 
             entry.target.classList.add("show");
 
@@ -159,11 +169,11 @@ const projectObserver = new IntersectionObserver((entries)=>{
 
     });
 
-},{
-    threshold:0.3
+}, {
+    threshold: 0.3
 });
 
-projectCards.forEach(card=>{
+projectCards.forEach(card => {
 
     projectObserver.observe(card);
 
@@ -171,15 +181,83 @@ projectCards.forEach(card=>{
 
 const progress = document.querySelector(".progress-fill");
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
     const scrollTop = window.scrollY;
 
     const height =
-    document.documentElement.scrollHeight - window.innerHeight;
+        document.documentElement.scrollHeight - window.innerHeight;
 
     const percent = (scrollTop / height) * 100;
 
     progress.style.width = percent + "%";
+
+});
+
+startBtn.addEventListener("click", () => {
+
+    startBtn.style.opacity = "0";
+    startBtn.style.pointerEvents = "none";
+
+    carGroup.classList.add("engine-start");
+
+    setTimeout(() => {
+
+        carGroup.classList.remove("engine-start");
+
+        // Move logo + car together
+        carGroup.style.transition = "left 3.5s cubic-bezier(.22,1,.36,1)";
+        carGroup.style.left = "30%";
+
+        // When they reach the center...
+        setTimeout(() => {
+
+            // Move ONLY the car forward
+            introCar.style.transform = "translateX(900px)";
+
+            introLogo.classList.add("logo-glow");
+
+            const text = "INITIALISING....";
+            let i = 0;
+
+            const typing = setInterval(() => {
+
+                initialising.textContent += text[i];
+
+                i++;
+
+                if (i >= text.length) {
+
+                    clearInterval(typing);
+
+                    // Show loading bar
+                    loadingBox.style.opacity = "1";
+
+                    loadingBar.style.transition = "width 2.5s linear";
+                    loadingBar.style.width = "100%";
+
+                    // After loading completes
+                    setTimeout(() => {
+
+                        intro.style.transition = "opacity 1s";
+                        intro.style.opacity = "0";
+
+                        setTimeout(() => {
+
+                            intro.style.display = "none";
+                            mainContent.style.display = "block";
+                            hero.classList.add("show");
+
+                        }, 800);
+
+                    }, 2500);
+
+                }
+
+            }, 120);
+
+        }, 2500);
+
+    }, 700);
 
 });
