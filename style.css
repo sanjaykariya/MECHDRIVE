@@ -1003,12 +1003,13 @@ section{
 @media (max-width:768px){
 
     #carGroup{
-        left:-55vw;
+        left:-100vw;
         gap:10px;
     }
 
     #introLogo{
         font-size:38px;
+        margin-left: 0;
         letter-spacing:3px;
     }
 
