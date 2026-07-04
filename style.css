@@ -1003,7 +1003,7 @@ section{
 @media (max-width:768px){
 
     #carGroup{
-        left:-320px;
+        left:-35vw;
         gap:10px;
     }
 
